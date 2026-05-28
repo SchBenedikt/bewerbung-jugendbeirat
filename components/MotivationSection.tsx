@@ -41,10 +41,10 @@ export default function MotivationSection() {
               und bei einem Wettbewerb mitzuhelfen, der andere f&uuml;r gro&szlig;artige,
               multimediale Projekte auszeichnet. Wir w&uuml;rden gerne mithelfen, den Deutschen
               Multimediapreis bekannter zu machen und sowohl beim Abschlussevent als
-              auch bei der Weiterentwicklung des Wettbewerbs allgemein mitzuhelfen, damit
+              auch bei der Weiterentwicklung des Wettbewerbs allgemein, damit
               auch in Zukunft so tolle multimediale Projekte mit ihrem teils riesigen Potential
               eine mindestens genauso sch&ouml;ne und einmalige Veranstaltung erleben k&ouml;nnen
-              <strong style={{ color: 'var(--red)' }}> wie wir.</strong>
+              <strong style={{ color: 'var(--red)' }}> wie wir.</strong> damals.
             </p>
           </div>
         </div>
