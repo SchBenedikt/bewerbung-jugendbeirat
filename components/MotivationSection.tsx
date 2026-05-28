@@ -44,7 +44,7 @@ export default function MotivationSection() {
               auch bei der Weiterentwicklung des Wettbewerbs allgemein, damit
               auch in Zukunft so tolle multimediale Projekte mit ihrem teils riesigen Potential
               eine mindestens genauso sch&ouml;ne und einmalige Veranstaltung erleben k&ouml;nnen
-              <strong style={{ color: 'var(--red)' }}> wie wir.</strong> damals.
+              <strong style={{ color: 'var(--red)' }}> wie wir</strong> damals.
             </p>
           </div>
         </div>
