@@ -158,6 +158,9 @@ input,textarea{user-select:text;-webkit-user-select:text;-moz-user-select:text;-
 .footer__subtitle{display:block;font-family:var(--font-bangers),cursive;font-size:clamp(1rem,3vw,1.8rem);color:var(--yellow);letter-spacing:6px;margin-bottom:16px;text-shadow:2px 2px 0 var(--dark)}
 .footer__divider{width:80px;height:3px;background:var(--red);margin:18px auto;border-radius:2px}
 .footer__names{font-family:var(--font-bangers),cursive;font-size:clamp(1.1rem,2.5vw,1.6rem);color:var(--yellow);letter-spacing:2px;margin-bottom:4px}
+.footer__links{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.footer__link{display:inline-flex;align-items:center;justify-content:center;padding:8px 14px;border:2px solid var(--yellow);background:rgba(255,255,255,0.06);color:var(--warm);font-family:var(--font-bangers),cursive;font-size:0.85rem;letter-spacing:1px;text-decoration:none;transition:transform 0.2s var(--transition-smooth),background 0.2s var(--transition-smooth),color 0.2s var(--transition-smooth),border-color 0.2s var(--transition-smooth)}
+.footer__link:hover,.footer__link:focus-visible{transform:translateY(-2px);background:var(--yellow);color:var(--dark);border-color:var(--warm);outline:none}
 .footer__school{color:rgba(255,255,255,0.5);font-size:0.9rem;margin-bottom:16px}
 .footer .copyright{font-size:0.75rem;color:rgba(255,255,255,0.35)}
 

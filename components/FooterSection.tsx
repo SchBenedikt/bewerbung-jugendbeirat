@@ -19,6 +19,14 @@ export default function FooterSection() {
           <div className="footer__divider" aria-hidden="true" />
 
           <div className="footer__names">Vinzenz &amp; Benedikt Sch&auml;chner</div>
+          <div className="footer__links" aria-label="Websites">
+            <a className="footer__link" href="https://vinzenz.schächner.de" target="_blank" rel="noreferrer">
+              vinzenz.schächner.de
+            </a>
+            <a className="footer__link" href="https://benedikt.schächner.de" target="_blank" rel="noreferrer">
+              benedikt.schächner.de
+            </a>
+          </div>
           <p className="footer__school">K&ouml;nig-Karlmann-Gymnasium Alt&ouml;tting &middot; Bayern</p>
 
           <div className="footer__divider" aria-hidden="true" />

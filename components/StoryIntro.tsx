@@ -35,7 +35,7 @@ export default function StoryIntro() {
           />
 
           <p style={{ fontSize: '1.1rem', lineHeight: 1.8, color: 'var(--red)', fontWeight: 700, fontStyle: 'italic' }}>
-            Genau das - und hoffentlich auch diese Seite - drückt wohl am besten aus, wie sehr wir uns für dieses Thema interessieren.
+            Genau das – und hoffentlich auch diese Seite – zeigt am besten, wie sehr wir uns für neue, digitale Medien und kreative multimediale Projekte interessieren.
           </p>
         </div>
       </div>

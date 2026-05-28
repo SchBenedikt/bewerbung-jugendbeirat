@@ -1,9 +1,9 @@
 export default function ComicStoryGrid() {
   return (
-    <section className="section section--warm panel" aria-label="Bewerbung als Comic">
+    <section className="section section--warm panel" aria-label="Bewerbung">
       <div className="section__inner">
         <div className="section__label"># Unsere Geschichte</div>
-        <h2 className="section__title">Bewerbung als Comic</h2>
+        <h2 className="section__title">Bewerbung</h2>
 
         <div className="comic-image-wrap panel stagger">
           <img
