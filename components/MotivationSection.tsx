@@ -9,16 +9,7 @@ export default function MotivationSection() {
           Unsere Motivation
         </h2>
 
-        <div
-          className="comic-panel panel stagger"
-          style={{
-            background: 'white',
-            borderColor: 'var(--black)',
-            boxShadow: '6px 6px 0 var(--black)',
-            borderRadius: 40,
-            padding: '36px 40px',
-          }}
-        >
+        <div className="comic-panel panel stagger">
           <div
             style={{
               display: 'flex',

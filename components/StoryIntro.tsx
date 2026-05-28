@@ -5,7 +5,7 @@ export default function StoryIntro() {
         <div className="section__label stagger"># Unsere Bewerbung</div>
         <h2 className="section__title stagger">Bewerbung</h2>
 
-        <div className="comic-panel comic-panel--double panel stagger">
+        <div className="comic-panel panel stagger">
           <p style={{ fontSize: '1.05rem', lineHeight: 2, color: '#333' }}>
             Vor zwei Jahren haben wir zusammen den <strong>deutschen Multimediapreis</strong> mit
             unserem Projekt <strong>&bdquo;Meum Diarium – Ein Feldherr als Influencer&rdquo;</strong> gewonnen.
