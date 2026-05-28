@@ -12,12 +12,12 @@ export default function StoryIntro() {
             Hierfür haben wir eine Website erstellt, in der
             <strong> Gaius Julius Caesar</strong> aus seiner subjektiven Sicht ein Tagebuch über
             seine Feldzüge und andere Ereignisse geschrieben hat. Mit viel Liebe zum Detail haben
-            wir unter anderem eine <strong>KI implementiert</strong>, die so antworten würde, wie
+            wir unter anderem eine <strong>KI implementiert</strong>, die so antwortet, wie
             es Caesar vermutlich gemacht hätte.
           </p>
 
           <p className="mt-16" style={{ fontSize: '1.05rem', lineHeight: 2, color: '#333' }}>
-            Und genau dafür interessieren und beschäftigen wir uns am meisten: Mit
+            Und genau dafür interessieren wir uns am meisten: Mit
             <strong> neuen digitalen Medien</strong>, technischen Fortschritten und mit KI,
             speziell aber auch im Bereich <strong>Self-Hosting</strong>. Wir haben zuhause von
             Grund auf unseren eigenen Server mit eigener Cloud-Instanz &mdash; genauso wie
