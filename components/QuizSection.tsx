@@ -4,65 +4,39 @@ import { useState } from 'react';
 
 const questions = [
   {
-    question: 'Welchen Multimedia-Preis haben Vinzenz & Benedikt gewonnen?',
+    question: 'Welchen Multimedia-Preis haben Vinzenz & Benedikt noch gewonnen?',
     options: [
-      { text: 'Crossmedia-Wettbewerb des BR', explanation: 'Genau! Wir haben den Crossmedia-Wettbewerb des Bayerischen Rundfunks gewonnen. Das zeigt: Wir kennen die Medienlandschaft, wissen wie Storytelling funktioniert und haben bewiesen, dass wir junge Perspektiven multimedial umsetzen können – genau das braucht der Jugendbeirat.' },
-      { text: 'Jugend forscht', explanation: 'Nicht ganz – Naturwissenschaften sind weniger unser Ding. Unser Fokus liegt auf Medien und Technik. Deshalb passt der Jugendbeirat perfekt zu uns: Wir wollen genau diese Medienkompetenz einbringen.' },
-      { text: 'Bundeswettbewerb Informatik', explanation: 'Informatik liegt uns zwar (wir programmieren leidenschaftlich), aber unseren Preis haben wir im Multimedia-Bereich gewonnen. Genau diese Kombination aus Technik und Medien macht uns stark für den Jugendbeirat.' },
-      { text: 'Deutscher Kurzfilmpreis', explanation: 'Film ist spannend, aber wir sind breiter aufgestellt: Multimedia bedeutet für uns Text, Bild, Code und KI. Der Jugendbeirat profitiert von dieser Vielfalt.' },
+      { text: 'Crossmedia-Wettbewerb des BR' },
+      { text: 'Jugend forscht' },
+      { text: 'Bundeswettbewerb Informatik' },
+      { text: 'Deutscher Kurzfilmpreis' },
     ],
     correct: 0,
+    explanation: 'Wir haben auch den Crossmedia-Wettbewerb des Bayerischen Rundfunks mehrmals gewonnen. Das zeigt nochmal ganz klar, wie sehr wir multimediale Projekte lieben!',
   },
   {
-    question: 'Wie heißt ihr Schulfach-Projekt über Caesar?',
+    question: 'Wie heißt unser Projekt über Caesar?',
     options: [
-      { text: "Caesar's Chronicle", explanation: 'Nicht ganz – aber der Name klingt ähnlich. Unser Projekt zeigt, wie wir Geschichte mit KI und digitalen Medien neu erzählen. Der Jugendbeirat braucht genau solche frischen Ideen, um den Multimediapreis zeitgemäß zu gestalten.' },
-      { text: 'Meum Diarium', explanation: 'Richtig! Meum Diarium – Cäsars Tagebuch, mit KI zum Leben erweckt. Dieses Projekt verbindet Geschichte, Technik und Kreativität. Genau diese interdisziplinäre Denkweise wollen wir in den Jugendbeirat einbringen: Medienbildung neu denken.' },
-      { text: 'Acta Caesaris', explanation: 'Knapp daneben! Unser Projekt heißt Meum Diarium. Es zeigt, wie wir komplexe Themen einfach und kreativ aufbereiten können – eine Fähigkeit, die im Jugendbeirat Gold wert ist, wenn es um Öffentlichkeitsarbeit geht.' },
-      { text: 'De Bello Gallico', explanation: 'Das ist das Original von Caesar – unser Projekt hat einen kreativeren Ansatz gewählt. Wir haben gezeigt, dass wir klassische Inhalte in moderne, multimediale Formate übersetzen können. Genau das macht uns geeignet für den Jugendbeirat.' },
+      { text: "Caesar's Chronicle" },
+      { text: 'Meum Diarium' },
+      { text: 'Acta Caesaris' },
+      { text: 'De Bello Gallico' },
     ],
     correct: 1,
+    explanation: '"Meum Diarium – Gaius Juluius Caesar als Influencer" ist unser Projekt. Es verbindet alte Geschichte, subjektive Wahrnehmungen und unterhaltsamen Inhalt mit neuen Technologien.',
   },
   {
-    question: 'Was betreiben sie zuhause auf eigener Hardware?',
+    question: 'Womit beschäftigen wir uns leidenschaftlich?',
     options: [
-      { text: 'Minecraft-Server', explanation: 'Auch lustig, aber nein! Wir hosten unsere eigene Cloud und Server-Infrastruktur. Das zeigt: Wir übernehmen Verantwortung, verstehen Technik im Detail und können Projekte eigenständig umsetzen – ideale Voraussetzungen für den Jugendbeirat.' },
-      { text: 'Eigene Cloud & Server', explanation: 'Genau! Unser eigener Server läuft zuhause – mit Cloud, Diensten und voller Kontrolle. Self-Hosting bedeutet: Wir sind technisch versiert, lösungsorientiert und scheuen uns nicht vor komplexen Projekten. Das bringt der Jugendbeirat braucht!' },
-      { text: 'Crypto-Mining', explanation: 'Nein, Mining ist nicht unser Ding. Aber wir verstehen, wie Technik im Kern funktioniert. Diese technische Grundlage hilft uns, den Multimediapreis auch in Zukunft digital und innovativ zu denken.' },
-      { text: 'Streaming-Plattform', explanation: 'Fast! Wir streamen zwar nicht, aber wir hosten eigene Webdienste. Medien zu konsumieren ist eine Sache – sie selbst zu betreiben eine andere. Diese aktive Gestaltung wollen wir in den Jugendbeirat einbringen.' },
+      { text: 'Minecraft-Server' },
+      { text: 'Eigene Cloud & Server' },
+      { text: 'Crypto-Mining' },
+      { text: 'Streaming-Plattform' },
     ],
     correct: 1,
+    explanation: 'Zuhause läuft bei uns unser eigener Server mit eigener Cloud. Während andere Computerspiele spielen, tüfteln wir lieber an Servern und Software herum. Zudem programmieren wir leidenschaftlich gerne!',
   },
-  {
-    question: 'Womit beschäftigen sie sich am liebsten?',
-    options: [
-      { text: 'Künstliche Intelligenz', explanation: 'Ja! KI ist unser großes Thema – von Chatbots bis zu generativen Modellen. Wir verstehen, wie diese Technologie funktioniert und wie man sie sinnvoll einsetzt. Der Jugendbeirat profitiert von diesem Wissen, besonders bei der Bewertung von Multimedia-Projekten mit KI-Bezug.' },
-      { text: 'Game Development', explanation: 'Spieleprogrammierung ist spannend, aber unser Fokus liegt auf KI und Webentwicklung. Wir wollen im Jugendbeirat vor allem unsere Medien- und Technikkompetenz einbringen – und die liegt klar im Multimedia-Bereich.' },
-      { text: '3D-Druck', explanation: '3D-Druck ist cool, aber nicht unsere Hauptleidenschaft. Wir sind digital unterwegs: Code, KI, Web, Medien. Der Jugendbeirat dreht sich um Multimedia – da passen unsere Skills perfekt.' },
-      { text: 'Robotik', explanation: 'Robotik ist interessant, aber wir sind eher in der digitalen Welt zuhause. Unsere Stärke liegt in Software, KI und Medienproduktion – genau das, was der Jugendbeirat braucht, um den Multimediapreis weiterzuentwickeln.' },
-    ],
-    correct: 0,
-  },
-  {
-    question: 'In welcher Schule sind sie zuhause?',
-    options: [
-      { text: 'München', explanation: 'Große Stadt, aber wir kommen vom Land! Am König-Karlmann-Gymnasium in Altötting haben wir gelernt, dass man auch abseits der Metropolen Großes erreichen kann. Der Jugendbeirat braucht genau diese Perspektive: Medienkompetenz für alle Regionen.' },
-      { text: 'Altötting', explanation: 'Stimmt! König-Karlmann-Gymnasium Altötting. Wir kommen aus einer kleineren Stadt und haben trotzdem (oder gerade deshalb) den Multimediapreis gewonnen. Wir zeigen: Medienbildung ist überall möglich – und das wollen wir im Jugendbeirat fördern.' },
-      { text: 'Passau', explanation: 'Nah dran, aber nicht ganz! Wir gehen in Altötting zur Schule. Unsere Region ist ländlich geprägt – und genau das ist unsere Stärke: Wir bringen die Perspektive junger Menschen aus ganz Bayern in den Jugendbeirat.' },
-      { text: 'Salzburg', explanation: 'Salzburg ist schön, aber wir sind auf der bayerischen Seite der Grenze zuhause! Unser Schulstandort Altötting zeigt: Man muss nicht in der Großstadt sein, um multimedial Großes zu leisten.' },
-    ],
-    correct: 1,
-  },
-  {
-    question: 'Welches Framework nutzen sie am liebsten?',
-    options: [
-      { text: 'Vue.js', explanation: 'Nicht ganz – Vue ist gut, aber wir schwören auf React und Next.js. Wir haben diese Seite damit gebaut! Unsere Webentwicklung-Skills zeigen: Wir können nicht nur über Medien reden, sondern sie selbst gestalten. Das ist genau das Mindset des Jugendbeirats.' },
-      { text: 'React / Next.js', explanation: 'Richtig! React und Next.js sind unsere Werkzeuge – diese Bewerbungsseite ist der beste Beweis. Wir können nicht nur Konzepte entwickeln, sondern sie auch technisch umsetzen. Der Jugendbeirat profitiert von dieser Hands-on-Mentalität.' },
-      { text: 'Angular', explanation: 'Zu enterprise für uns! Wir setzen auf moderne, flexible Frameworks wie Next.js. Unsere Herangehensweise: schnell, kreativ, praktisch – genau das braucht es, um den Multimediapreis für Jugendliche relevant zu halten.' },
-      { text: 'Svelte', explanation: 'Svelte ist spannend, aber wir arbeiten lieber mit dem React-Ökosystem. Wichtig ist: Wir haben die Wahl und verstehen, welches Tool für welches Projekt passt. Diese Entscheidungskompetenz bringen wir in den Jugendbeirat ein.' },
-    ],
-    correct: 1,
-  },
+
 ];
 
 const baseBtn: Record<string, string | number> = {
@@ -252,7 +226,7 @@ export default function QuizSection() {
               <span style={{ fontFamily: 'var(--font-bangers), cursive', color: 'var(--red)', fontSize: '0.85rem', letterSpacing: 1, display: 'block', marginBottom: 4 }}>
                 {selected === q.correct ? '\u2713 RICHTIG' : '\u2717 LEIDER FALSCH'}
               </span>
-              {q.options[selected!].explanation}
+              {q.explanation}
             </div>
           )}
 

@@ -37,7 +37,7 @@ export default function MotivationSection() {
                 fontStyle: 'italic',
               }}
             >
-              Umso mehr w&uuml;rden wir uns freuen, Teil des Jugendbeirats 2026 zu werden,
+              Wir w&uuml;rden uns freuen, Teil des Jugendbeirats 2026 zu werden,
               und bei einem Wettbewerb mitzuhelfen, der andere f&uuml;r gro&szlig;artige,
               multimediale Projekte auszeichnet. Wir w&uuml;rden gerne mithelfen, den Deutschen
               Multimediapreis bekannter zu machen und beim Abschlussevent &mdash; aber vor allem
