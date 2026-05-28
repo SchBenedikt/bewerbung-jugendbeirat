@@ -64,6 +64,17 @@ export default function QuizSection() {
   const [finished, setFinished] = useState(false);
 
   const q = questions[current];
+  const percent = finished ? Math.round((score / questions.length) * 100) : 0;
+  const resultText =
+    percent === 100
+      ? 'Perfekt! Du kennst uns schon ziemlich gut!'
+      : percent >= 80
+        ? 'Fast perfekt! Du bist echt gut informiert.'
+        : percent >= 60
+          ? 'Gar nicht schlecht! Du weißt schon einiges über uns.'
+          : percent >= 40
+            ? 'Na immerhin die Hälfte – weiter so!'
+            : 'Lies dir die Seite am Besten nochmal durch!. ;)';
 
   function handleSelect(idx: number) {
     if (selected !== null) return;
@@ -87,157 +98,145 @@ export default function QuizSection() {
     setFinished(false);
   }
 
-  if (finished) {
-    const percent = Math.round((score / questions.length) * 100);
-    let text = '';
-    if (percent === 100) text = 'Perfekt! Du kennst uns besser als wir uns selbst!';
-    else if (percent >= 80) text = 'Fast perfekt! Du bist echt gut informiert.';
-    else if (percent >= 60) text = 'Gar nicht schlecht! Du weißt schon einiges über uns.';
-    else if (percent >= 40) text = 'Na immerhin die Hälfte – weiter so!';
-    else text = 'Hmm, da gibt es noch Nachholbedarf. ;)';
-
-    return (
-      <section className="section section--warm panel" aria-label="Quiz Ergebnis">
-        <div className="section__inner" style={{ textAlign: 'center' }}>
-          <div className="comic-panel panel stagger" style={{ maxWidth: 500, margin: '0 auto', padding: '40px 36px' }}>
-            <div style={{ fontFamily: 'var(--font-bangers), cursive', fontSize: '3rem', color: 'var(--red)', lineHeight: 1, marginBottom: 8 }}>
-              {score}/{questions.length}
-            </div>
-            <div style={{ width: 60, height: 4, background: 'var(--red)', margin: '0 auto 20px', borderRadius: 2 }} />
-            <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: '#555', marginBottom: 24 }}>{text}</p>
-            <button onClick={handleRestart} className="btn">&#8635; Nochmal spielen</button>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   return (
-    <section id="quiz" className="section section--warm panel" aria-label="Quiz">
+    <section id="quiz" className="section section--warm panel" aria-label={finished ? 'Quiz Ergebnis' : 'Quiz'}>
       <div className="section__inner">
-        <div className="section__label stagger"># Quiz</div>
-        <h2 className="section__title stagger">Was wisst ihr &uuml;ber uns?</h2>
+        <div style={{ textAlign: 'center' }}>
+          <div className="section__label stagger"># Quiz</div>
+          <h2 className="section__title stagger">Was wisst ihr &uuml;ber uns?</h2>
 
-        <div className="comic-panel panel stagger" style={{ padding: '32px 36px', maxWidth: 640, margin: '0 auto' }}>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              marginBottom: 20,
-            }}
-          >
-            <span
-              style={{
-                fontFamily: 'var(--font-bangers), cursive',
-                fontSize: '0.85rem',
-                color: 'var(--red)',
-                letterSpacing: 2,
-              }}
-            >
-              Frage {current + 1} / {questions.length}
-            </span>
-            <span
-              style={{
-                fontFamily: 'var(--font-bangers), cursive',
-                fontSize: '0.85rem',
-                color: '#999',
-                letterSpacing: 1,
-              }}
-            >
-              Punkte: {score}
-            </span>
-          </div>
-
-          <p
-            style={{
-              fontSize: 'clamp(1.05rem, 2vw, 1.2rem)',
-              fontWeight: 700,
-              lineHeight: 1.5,
-              color: 'var(--dark)',
-              marginBottom: 24,
-            }}
-          >
-            {q.question}
-          </p>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-            {q.options.map((opt, idx) => {
-              let style = { ...baseBtn };
-
-              if (selected !== null) {
-                style.boxShadow = 'none';
-                if (idx === q.correct) {
-                  style.background = '#d4edda';
-                  style.borderColor = '#28a745';
-                  style.color = '#155724';
-                  style.fontWeight = 700;
-                } else if (idx === selected) {
-                  style.background = '#f8d7da';
-                  style.borderColor = '#dc3545';
-                  style.color = '#721c24';
-                } else {
-                  style.background = '#f8f8f8';
-                  style.borderColor = '#ccc';
-                  style.color = '#999';
-                }
-              }
-
-              return (
-                <button
-                  key={idx}
-                  onClick={() => handleSelect(idx)}
-                  disabled={selected !== null}
-                  style={style}
-                  onMouseEnter={(e) => {
-                    if (selected === null) {
-                      e.currentTarget.style.transform = 'translate(-2px, -2px)';
-                      e.currentTarget.style.boxShadow = '5px 5px 0 var(--black)';
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (selected === null) {
-                      e.currentTarget.style.transform = 'none';
-                      e.currentTarget.style.boxShadow = '3px 3px 0 var(--black)';
-                    }
+          {finished ? (
+            <div className="comic-panel panel stagger" style={{ maxWidth: 500, margin: '0 auto', padding: '40px 36px' }}>
+              <div style={{ fontFamily: 'var(--font-bangers), cursive', fontSize: '3rem', color: 'var(--red)', lineHeight: 1, marginBottom: 8 }}>
+                {score}/{questions.length}
+              </div>
+              <div style={{ width: 60, height: 4, background: 'var(--red)', margin: '0 auto 20px', borderRadius: 2 }} />
+              <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: '#555', marginBottom: 24 }}>{resultText}</p>
+              <button onClick={handleRestart} className="btn">&#8635; Nochmal spielen</button>
+            </div>
+          ) : (
+            <div className="comic-panel panel stagger" style={{ padding: '32px 36px', maxWidth: 640, margin: '0 auto' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  marginBottom: 20,
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: 'var(--font-bangers), cursive',
+                    fontSize: '0.85rem',
+                    color: 'var(--red)',
+                    letterSpacing: 2,
                   }}
                 >
-                  {String.fromCharCode(65 + idx)}. {opt.text}
-                  {selected !== null && idx === q.correct && ' \u2713'}
-                  {selected !== null && idx === selected && idx !== q.correct && ' \u2717'}
+                  Frage {current + 1} / {questions.length}
+                </span>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-bangers), cursive',
+                    fontSize: '0.85rem',
+                    color: '#999',
+                    letterSpacing: 1,
+                  }}
+                >
+                  Punkte: {score}
+                </span>
+              </div>
+
+              <p
+                style={{
+                  fontSize: 'clamp(1.05rem, 2vw, 1.2rem)',
+                  fontWeight: 700,
+                  lineHeight: 1.5,
+                  color: 'var(--dark)',
+                  marginBottom: 24,
+                }}
+              >
+                {q.question}
+              </p>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {q.options.map((opt, idx) => {
+                  let style = { ...baseBtn };
+
+                  if (selected !== null) {
+                    style.boxShadow = 'none';
+                    if (idx === q.correct) {
+                      style.background = '#d4edda';
+                      style.borderColor = '#28a745';
+                      style.color = '#155724';
+                      style.fontWeight = 700;
+                    } else if (idx === selected) {
+                      style.background = '#f8d7da';
+                      style.borderColor = '#dc3545';
+                      style.color = '#721c24';
+                    } else {
+                      style.background = '#f8f8f8';
+                      style.borderColor = '#ccc';
+                      style.color = '#999';
+                    }
+                  }
+
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => handleSelect(idx)}
+                      disabled={selected !== null}
+                      style={style}
+                      onMouseEnter={(e) => {
+                        if (selected === null) {
+                          e.currentTarget.style.transform = 'translate(-2px, -2px)';
+                          e.currentTarget.style.boxShadow = '5px 5px 0 var(--black)';
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        if (selected === null) {
+                          e.currentTarget.style.transform = 'none';
+                          e.currentTarget.style.boxShadow = '3px 3px 0 var(--black)';
+                        }
+                      }}
+                    >
+                      {String.fromCharCode(65 + idx)}. {opt.text}
+                      {selected !== null && idx === q.correct && ' ✓'}
+                      {selected !== null && idx === selected && idx !== q.correct && ' ✗'}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {selected !== null && (
+                <div
+                  style={{
+                    marginTop: 20,
+                    background: '#fffbe6',
+                    border: '3px solid var(--yellow)',
+                    borderRadius: 12,
+                    padding: '16px 20px',
+                    fontSize: '0.9rem',
+                    lineHeight: 1.6,
+                    color: '#555',
+                  }}
+                >
+                  <span style={{ fontFamily: 'var(--font-bangers), cursive', color: 'var(--red)', fontSize: '0.85rem', letterSpacing: 1, display: 'block', marginBottom: 4 }}>
+                    {selected === q.correct ? '✓ RICHTIG' : '✗ LEIDER FALSCH'}
+                  </span>
+                  {q.explanation}
+                </div>
+              )}
+
+              {selected !== null && (
+                <button
+                  onClick={handleNext}
+                  className="btn"
+                  style={{ marginTop: 20, width: '100%', textAlign: 'center' }}
+                >
+                  {current < questions.length - 1 ? 'Nächste Frage →' : 'Ergebnis anzeigen →'}
                 </button>
-              );
-            })}
-          </div>
-
-          {selected !== null && (
-            <div
-              style={{
-                marginTop: 20,
-                background: '#fffbe6',
-                border: '3px solid var(--yellow)',
-                borderRadius: 12,
-                padding: '16px 20px',
-                fontSize: '0.9rem',
-                lineHeight: 1.6,
-                color: '#555',
-              }}
-            >
-              <span style={{ fontFamily: 'var(--font-bangers), cursive', color: 'var(--red)', fontSize: '0.85rem', letterSpacing: 1, display: 'block', marginBottom: 4 }}>
-                {selected === q.correct ? '\u2713 RICHTIG' : '\u2717 LEIDER FALSCH'}
-              </span>
-              {q.explanation}
+              )}
             </div>
-          )}
-
-          {selected !== null && (
-            <button
-              onClick={handleNext}
-              className="btn"
-              style={{ marginTop: 20, width: '100%', textAlign: 'center' }}
-            >
-              {current < questions.length - 1 ? 'N\u00e4chste Frage \u2192' : 'Ergebnis anzeigen \u2192'}
-            </button>
           )}
         </div>
       </div>

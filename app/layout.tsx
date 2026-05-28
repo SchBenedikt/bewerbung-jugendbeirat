@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bangers, Nunito } from "next/font/google";
 import "./globals.css";
+import InteractionGuards from "@/components/InteractionGuards";
 
 const bangers = Bangers({
   variable: "--font-bangers",
@@ -94,7 +95,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <InteractionGuards />
+        {children}
+      </body>
     </html>
   );
 }

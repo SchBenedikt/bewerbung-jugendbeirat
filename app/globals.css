@@ -1,6 +1,7 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--font-nunito),sans-serif;background:#F1FAEE;color:#1A1A1A;overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-nunito),sans-serif;background:#F1FAEE;color:#1A1A1A;overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+input,textarea{user-select:text;-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text}
 :root{--red:#E63946;--blue:#1D3557;--yellow:#FFD166;--warm:#F1FAEE;--dark:#0B132B;--black:#1A1A1A;--panel-border:4px solid #1A1A1A;--transition-smooth:cubic-bezier(0.16,1,0.3,1);--font-bangers: 'Bangers', cursive;--font-nunito: 'Nunito', sans-serif}
 
 @media (prefers-reduced-motion: reduce){
