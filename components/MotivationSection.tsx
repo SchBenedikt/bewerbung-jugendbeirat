@@ -39,7 +39,7 @@ export default function MotivationSection() {
             >
          Wir würden uns freuen, Teil des Jugendbeirats 2026 zu werden
 und bei einem Wettbewerb mitzuwirken, der großartige multimediale Projekte auszeichnet.
-Außerdem möchten wir dabei helfen, den Deutschen Multimediapreis bekannter zu machen,
+Außerdem möchten wir dabei helfen, den Deutschen Multimediapreis mitzugestalten,
 damit auch in Zukunft kreative Projekte mit ihrem teils riesigen Potential
 eine genauso besondere und einmalige Veranstaltung erleben können
 <strong style={{ color: 'var(--red)' }}> wie wir</strong> damals.

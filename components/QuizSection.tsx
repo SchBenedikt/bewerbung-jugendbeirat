@@ -12,7 +12,7 @@ const questions = [
       { text: 'Deutscher Kurzfilmpreis' },
     ],
     correct: 0,
-    explanation: 'Wir haben auch den Crossmedia-Wettbewerb des Bayerischen Rundfunks mehrmals gewonnen. Das zeigt nochmal ganz klar, wie sehr wir multimediale Projekte lieben!',
+    explanation: 'Wir haben auch mehrmals den Crossmedia-Wettbewerb des Bayerischen Rundfunks gewonnen.',
   },
   {
     question: 'Wie heißt unser Projekt über Caesar?',
@@ -23,7 +23,7 @@ const questions = [
       { text: 'De Bello Gallico' },
     ],
     correct: 1,
-    explanation: '"Meum Diarium – Gaius Juluius Caesar als Influencer" ist unser Projekt. Es verbindet alte Geschichte, subjektive Wahrnehmungen und unterhaltsamen Inhalt mit neuen Technologien.',
+    explanation: 'Unser Projekt heißt "Meum Diarium – Gaius Juluius Caesar als Influencer". Wir haben versucht, alte Geschichte mit modernen Medien und kreativer Gestaltung zu verbinden.',
   },
   {
     question: 'Womit beschäftigen wir uns leidenschaftlich?',
@@ -34,7 +34,7 @@ const questions = [
       { text: 'Streaming-Plattform' },
     ],
     correct: 1,
-    explanation: 'Zuhause läuft bei uns unser eigener Server mit eigener Cloud. Während andere Computerspiele spielen, tüfteln wir lieber an Servern und Software herum. Zudem programmieren wir leidenschaftlich gerne!',
+    explanation: 'Zuhause läuft bei uns unser eigener Server mit eigener Cloud. Wir tüfteln gerne an Servern oder Software herum und auch programmieren macht uns sehr viel Spaß.',
   },
 
 ];
@@ -103,7 +103,7 @@ export default function QuizSection() {
       <div className="section__inner">
         <div style={{ textAlign: 'center' }}>
           <div className="section__label stagger"># Quiz</div>
-          <h2 className="section__title stagger">Was wisst ihr &uuml;ber uns?</h2>
+          <h2 className="section__title stagger">Ein kurzes Quiz &uuml;ber uns:</h2>
 
           {finished ? (
             <div className="comic-panel panel stagger" style={{ maxWidth: 500, margin: '0 auto', padding: '40px 36px' }}>
